@@ -1,0 +1,47 @@
+﻿@using AgenciaMetereologica.Models
+@model List<MaximaTemperatura>
+@{
+    ViewBag.Title = "Reporte";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Reporte maxima de temperatura</h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-6">
+
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th class="text-center"> Nombre de estacion</th>
+                    <th class="text-center"> Temperatura maxima</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var reporte in Model)
+                {
+                    <tr class=" text-center">
+
+                        <td>
+                            @reporte.nombre_estacion
+                        </td>
+
+                        <td>
+                            @reporte.TemperaturaMaxima
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

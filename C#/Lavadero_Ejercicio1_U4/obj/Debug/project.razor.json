@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\Users\\Paulo-PC\\source\\repos\\Lavadero_Ejercicio1_U4\\Lavadero_Ejercicio1_U4.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

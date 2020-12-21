@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Lavadero_Ejercicio1_U4.Models.Lavado>
+@*// esta vista va a trabajar con este modelo y es necesario para poder unir la clase con la vista*@
+@{
+    ViewBag.Title = "Listado de Lavados";
+
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Listado de Lavados cargados en la base de datos</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+
+                    <th class="text-center"> Patente</th>
+                    <th class="text-center"> Tipo</th>
+                    <th class="text-center"> Taxi</th>
+                    <th class="text-center"> Habitual</th>
+                    <th class="text-center"> Precio</th>
+                    <th class="text-center"> Eliminar</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var lavado in Model)
+                {
+                    <tr class=" text-center">
+
+                        <td>
+                            @lavado.patente
+                        </td>
+
+                        @if (lavado.idTipo == 1)
+                        {
+                            <td>Auto</td>
+                        }
+                        else if (lavado.idTipo == 2)
+                        {
+                            <td>Camioneta sin Cupula</td>
+                        }
+                        else
+                        {
+                            <td>Camioneta con Cupula</td>
+                        }
+
+
+                        @if (lavado.taxi)
+                        {
+                            <td>SI</td>
+                        }
+                        else
+                        {
+                            <td>NO</td>
+                        }
+
+
+                        @if (lavado.habitual)
+                        {
+                            <td>SI</td>
+                        }
+                        else
+                        {
+                            <td>NO</td>
+                        }
+                        <td>
+                            @lavado.PrecioConDescuento
+                        </td>
+
+                        <td>
+
+                            <a href="@Url.Action("EliminarLavado","Lavadero", new {@IdEliminarlavado = lavado.idLavado })" class=" btn btn-danger">Eliminar</a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

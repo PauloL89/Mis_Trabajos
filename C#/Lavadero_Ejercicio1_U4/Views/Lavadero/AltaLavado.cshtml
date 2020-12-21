@@ -1,0 +1,61 @@
+﻿@model Lavadero_Ejercicio1_U4.Models.Lavado
+@*// esta vista va a trabajar con este modelo y es necesario para poder unir la clase con la vista*@
+@{
+    ViewBag.Title = "Alta de un Lavado";
+
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Alta de nuevo Lavado</h4>
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Patente</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.patente, htmlAttributes: new { @class = "form-control", @id = "txt_patente" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Tipo de auto</label>
+                    <div class="col-sm-6">
+                        @Html.DropDownList("idTipo", items, "Seleccione tipo de vehiculo", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Es taxi</label>
+                    <div class="col-sm-6">
+                        @Html.CheckBox("taxi",false, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Es cliente habitual</label>
+                    <div class="col-sm-6">
+                        @Html.CheckBox("habitual",false, htmlAttributes: new { @class = "form-control"})
+                    </div>
+                </div>
+                
+                <div class="form-group text-right">
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary" type="submit">
+                            Guardar Lavado
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+

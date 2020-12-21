@@ -1,0 +1,51 @@
+﻿@using AgenciaMetereologica.Models
+@model List<Temp_HumedadPromedio>
+@{
+    ViewBag.Title = "Reporte";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Promedio de Temperatura y Humedad</h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th class="text-center"> Nombre de Estacion</th>
+                    <th class="text-center"> Promedio de Temperatura</th>
+                    <th class="text-center"> Promedio de Humedad</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var promedio in Model)
+                {
+                <tr class=" text-center">
+
+                    <td>
+                        @promedio.nombre_estacion
+                    </td>
+
+                    <td>
+                        @promedio.promTemperatura
+                    </td>
+
+                    <td>
+                        @promedio.promHumedad
+                    </td>
+
+                </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

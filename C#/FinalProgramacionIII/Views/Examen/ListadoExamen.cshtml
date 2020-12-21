@@ -1,0 +1,123 @@
+﻿@model IEnumerable<FinalProgramacionIII.Models.Examen>
+@{
+    ViewBag.Title = "Listado de Examenes";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Listado de Examanes cargados en la base de datos</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+
+                    <th class="text-center"> Materia</th>
+                    <th class="text-center"> Fecha</th>
+                    <th class="text-center"> Nota</th>
+
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var examen in Model)
+                {
+                <tr class=" text-center">
+
+                    @switch (examen.IdMateria)
+                    {
+                        case 1:
+                            <td>Matemática 1</td>
+                            break;
+                        case 2:
+                            <td>Lengua 1</td>
+                            break;
+                        case 3:
+                            <td>Bases de Datos 1</td>
+                            break;
+                        case 4:
+                            <td>Programacion 1</td>
+                            break;
+                        case 5:
+                            <td>Derecho civil</td>
+                            break;
+                        case 6:
+                            <td>Electronica Digital</td>
+                            break;
+                        case 7:
+                            <td>Teoria de Control </td>
+                            break;
+                        case 8:
+                            <td>Sitemas 1</td>
+                            break;
+                        case 9:
+                            <td>Programacion 2</td>
+                            break;
+                        case 10:
+                            <td>Sociedades comerciales</td>
+                            break;
+                        case 11:
+                            <td>Quimica</td>
+                            break;
+                        case 12:
+                            <td>Fisica 1</td>
+                            break;
+                        case 13:
+                            <td>Base de datos 2</td>
+                            break;
+                        case 14:
+                            <td>Matematica 2</td>
+                            break;
+                        case 15:
+                            <td>Trabajo Final</td>
+                            break;
+                        case 16:
+                            <td>Fisica 2</td>
+                            break;
+                        case 17:
+                            <td>Contabilidad</td>
+                            break;
+                        case 18:
+                            <td>Derecho Laboral</td>
+                            break;
+                        case 19:
+                            <td>Lengua 2</td>
+                            break;
+                        case 20:
+                            <td>Dactilografia</td>
+                            break;
+                        default:
+                            <td>Ninguna materia seleccionado</td>
+                            break;
+                    }
+
+
+                    <td>
+                        @examen.fecha
+                    </td>
+
+                    <td>
+                        @examen.nota
+                    </td>
+
+
+
+
+
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

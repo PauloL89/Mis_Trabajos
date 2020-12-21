@@ -1,0 +1,47 @@
+﻿@using ClubSocial.Models
+@model List<CantidadSocioPorTipoDeporte>
+@{
+    ViewBag.Title = "Reporte";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Reporte</h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <h3>Cantidad de socios por deportes</h3>
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th class="text-center"> Nombre deporte</th>
+                    <th class="text-center"> Cantidad de socios</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var deportes in Model)
+                {
+                    <tr class=" text-center">
+                       
+                        <td>
+                            @deportes.nombre_deporte
+                        </td>
+
+                        <td>
+                            @deportes.cantidad_socio
+                        </td>
+                     
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,9 @@
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\bin\Debug\Pacientes_Parcial.exe.config
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\bin\Debug\Pacientes_Parcial.exe
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\bin\Debug\Pacientes_Parcial.pdb
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\obj\Debug\Pacientes_Parcial.csprojAssemblyReference.cache
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\obj\Debug\Pacientes_Parcial.Form_Pacientes.resources
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\obj\Debug\Pacientes_Parcial.Properties.Resources.resources
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\obj\Debug\Pacientes_Parcial.csproj.GenerateResource.cache
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\obj\Debug\Pacientes_Parcial.exe
+C:\Users\Paulo-PC\source\repos\Pacientes_Parcial\obj\Debug\Pacientes_Parcial.pdb

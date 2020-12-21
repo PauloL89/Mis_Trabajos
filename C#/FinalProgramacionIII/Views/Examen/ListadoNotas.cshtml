@@ -1,0 +1,62 @@
+﻿@using FinalProgramacionIII.Models
+@model List<ListaNota>
+@{
+    ViewBag.Title = "Listado de Notas";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Listado de Notas </h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+
+                    <th class="text-center"> Nombre</th>
+                    <th class="text-center"> Nivel</th>
+                    <th class="text-center"> Fecha</th>
+                    <th class="text-center"> Nota</th>
+
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var nota in Model)
+                {
+                <tr class=" text-center">
+                    <td>
+                        @nota.nombreMateria
+                    </td>
+                    <td>
+                        @nota.nivel
+                    </td>
+
+                    <td>
+                        @nota.fecha
+                    </td>
+
+                    <td>
+                        @nota.nota
+                    </td>
+
+
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+

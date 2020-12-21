@@ -1,0 +1,80 @@
+﻿@model Lavadero_Ejercicio1_U4.Models.Lavado
+@{
+    ViewBag.Title = "Reporte";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Datos del Ultimo taxi habitual cargado @ViewBag.nombre </h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+
+                    <th class="text-center"> Patente</th>
+                    <th class="text-center"> Tipo</th>
+                    <th class="text-center"> Taxi</th>
+                    <th class="text-center"> Habitual</th>
+                    <th class="text-center"> Precio</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class=" text-center">
+
+                    <td>
+                        @Model.patente
+                    </td>
+
+                    @if (Model.idTipo == 1)
+                    {
+                        <td>Auto</td>
+                    }
+                    else if (Model.idTipo == 2)
+                    {
+                        <td>Camioneta sin Cupula</td>
+                    }
+                    else
+                    {
+                        <td>Camioneta con Cupula</td>
+                    }
+
+
+                    @if (Model.taxi)
+                    {
+                        <td>SI</td>
+                    }
+                    else
+                    {
+                        <td>NO</td>
+                    }
+
+
+                    @if (Model.habitual)
+                    {
+                        <td>SI</td>
+                    }
+                    else
+                    {
+                        <td>NO</td>
+                    }
+                    <td>
+                        @Model.PrecioConDescuento
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

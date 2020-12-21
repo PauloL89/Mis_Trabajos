@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ClubSocial.Models.Socio>
+@{
+    ViewBag.Title = "Listado de Socio";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Listado de socios cargados en la base de datos</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+
+                    <th class="text-center"> Nombre</th>
+                    <th class="text-center"> Apellido</th>
+                    <th class="text-center"> Tipo de Documento</th>
+                    <th class="text-center"> Nro de Documento</th>
+                    <th class="text-center"> Deporte</th>
+                    <th class="text-center"> Actualizar Datos</th>
+                    <th class="text-center"> Eliminar</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var socio in Model)
+                {
+                <tr class=" text-center">
+
+                    <td>
+                        @socio.nombre
+                    </td>
+
+                    <td>
+                        @socio.apellido
+                    </td>
+
+                    @if (socio.id_tipoDoc == 1)
+                    {
+                        <td>DNI</td>
+                    }
+                    else if (socio.id_tipoDoc == 2)
+                    {
+                        <td>Libreta</td>
+                    }
+                    else
+                    {
+                        <td>Pasaporte</td>
+                    }
+
+                    <td>
+                        @socio.nro_Doc
+                    </td>
+
+                    @switch (socio.id_deporte)
+                    {
+                        case 1:
+                            <td>Futbol</td>
+                            break;
+                        case 2:
+                            <td>Tenis</td>
+                            break;
+                        case 3:
+                            <td>Basquet</td>
+                            break;
+                        case 4:
+                            <td>Volley</td>
+                            break;
+                        case 5:
+                            <td>Handball</td>
+                            break;
+                        case 6:
+                            <td>Natacion</td>
+                            break;
+                        default:
+                            <td>Ningun deporte seleccionado</td>
+                            break;
+                    }
+
+                    <td>
+                        <a href="@Url.Action("ActualizarDatos","Socio", new {@idSocio = socio.id_socio })" class=" btn btn-warning">Actualizar</a>
+                       
+                    </td>
+
+                    <td>
+                        <a href="@Url.Action("Eliminar","Socio", new {@idSocio = socio.id_socio })" class=" btn btn-danger">Eliminar</a>
+                    </td>
+
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

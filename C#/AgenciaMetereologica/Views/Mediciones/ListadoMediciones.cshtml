@@ -1,0 +1,83 @@
+﻿@model IEnumerable<AgenciaMetereologica.Models.Mediciones>
+@{
+    ViewBag.Title = "Listado de Mediciones";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Listado de mediciones cargados en la base de datos</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+
+                    <th class="text-center"> Dia</th>
+                    <th class="text-center"> Estacion</th>
+                    <th class="text-center"> Temperatura</th>
+                    <th class="text-center"> Humedad</th>
+
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var mediciones in Model)
+                {
+                <tr class=" text-center">
+
+                    <td>
+                        @mediciones.dia
+                    </td>
+
+                    @switch (mediciones.idEstacion)
+                    {
+                        case 1:
+                            <td>Cerro Blanco</td>
+                            break;
+                        case 2:
+                            <td>Aeropuerto</td>
+                            break;
+                        case 3:
+                            <td>Centro</td>
+                            break;
+                        case 4:
+                            <td>Pampa del Ciervo</td>
+                            break;
+                        case 5:
+                            <td>Laguna Lopez</td>
+                            break;
+                        case 6:
+                            <td>Estancia Guzman</td>
+                            break;
+                        default:
+                            <td>Ningun estacion seleccionada</td>
+                            break;
+                    }
+
+
+                    <td>
+                        @mediciones.temperatura
+                    </td>
+
+
+                    <td>
+                        @mediciones.humedad
+                    </td>
+
+
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

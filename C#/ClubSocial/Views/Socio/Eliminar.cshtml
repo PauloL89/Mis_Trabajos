@@ -1,0 +1,55 @@
+﻿@model ClubSocial.Models.Socio
+@{
+    ViewBag.Title = "Eliminar socio";
+   
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Eliminar socio de la base de datos @ViewBag.nombre @ViewBag.apellido </h4>
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(Model => Model.id_socio)
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Nombre</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.nombre, htmlAttributes: new { @class = "form-control", @id = "txt_nombre" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Apellido</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.apellido, htmlAttributes: new { @class = "form-control", @id = "txt_apellido" })
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Nro Documento</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.nro_Doc, htmlAttributes: new { @class = "form-control", @id = "txt_nroDoc" })
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group text-right">
+                    <div class="col-xs-12">
+                        <button class="btn btn-danger" type="submit">
+                            Eliminar Socio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
